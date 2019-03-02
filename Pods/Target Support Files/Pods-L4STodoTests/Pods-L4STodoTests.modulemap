@@ -1,0 +1,6 @@
+framework module Pods_L4STodoTests {
+  umbrella header "Pods-L4STodoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

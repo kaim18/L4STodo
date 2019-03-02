@@ -1,0 +1,6 @@
+framework module Pods_L4STodoUITests {
+  umbrella header "Pods-L4STodoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
