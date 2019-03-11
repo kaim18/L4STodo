@@ -7,15 +7,47 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var distance: TimeInterval = 0 {
+        didSet {
+            print(distance)
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let calendar = Calendar(identifier: .gregorian)
+        let preDay = UserDefaults.standard.integer(forKey: "toDay")
+        let newDay = calendar.component(Calendar.Component.day, from: Date())
+        if preDay != newDay {
+            UserDefaults.standard.set(newDay, forKey: "toDay")
+            UserDefaults.standard.set(0, forKey: "playTime")
+        }
+        
+        let playTime = UserDefaults.standard.integer(forKey: "playTime")
+        distance = TimeInterval(exactly: playTime) ?? 0
+        
+        // notification center (singleton)
+        let center = UNUserNotificationCenter.current()
+        
+        // ------------------------------------
+        // 前準備: ユーザに通知の許可を求める
+        // ------------------------------------
+        
+        // request to notify for user
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Allowed")
+            } else {
+                print("Didn't allowed")
+            }
+        }
+        
         return true
     }
 
@@ -27,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        UserDefaults.standard.set(distance, forKey: "playTime")
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -34,13 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the useinterface.
+        distance = UserDefaults.standard.double(forKey: "playTime")
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
