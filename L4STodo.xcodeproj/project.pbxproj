@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2716BB8A7845C2086ECE8C7A /* Pods_L4STodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D5363516307D166E04BC25 /* Pods_L4STodo.framework */; };
+		9613C252223D00C2006A4E00 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9613C251223D00C2006A4E00 /* SettingController.swift */; };
+		9613C255223E524F006A4E00 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9613C254223E524F006A4E00 /* TopViewController.swift */; };
 		962C679722363C8A00CB5863 /* FlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C679622363C8A00CB5863 /* FlashCardViewController.swift */; };
+		962C67992238E92300CB5863 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962C67982238E92300CB5863 /* CustomCell.swift */; };
 		9636A2F72223C4880032FCE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9636A2F62223C4880032FCE4 /* AppDelegate.swift */; };
 		9636A2F92223C4880032FCE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9636A2F82223C4880032FCE4 /* ViewController.swift */; };
 		9636A2FC2223C4880032FCE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9636A2FA2223C4880032FCE4 /* Main.storyboard */; };
@@ -44,7 +47,12 @@
 		4B929DF513ECF6F8151EBAB7 /* Pods_L4STodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_L4STodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		809F0C2CECF957F3D6DE2AE0 /* Pods-L4STodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L4STodo.debug.xcconfig"; path = "Target Support Files/Pods-L4STodo/Pods-L4STodo.debug.xcconfig"; sourceTree = "<group>"; };
 		80C756FECBD66F9CDFC716DD /* Pods-L4STodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L4STodoTests.release.xcconfig"; path = "Target Support Files/Pods-L4STodoTests/Pods-L4STodoTests.release.xcconfig"; sourceTree = "<group>"; };
+		9613C251223D00C2006A4E00 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		9613C253223E4C52006A4E00 /* DB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DB.otf; sourceTree = "<group>"; };
+		9613C254223E524F006A4E00 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		9613C256223E5671006A4E00 /* DIN-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN-RegularItalic.ttf"; sourceTree = "<group>"; };
 		962C679622363C8A00CB5863 /* FlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewController.swift; sourceTree = "<group>"; };
+		962C67982238E92300CB5863 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		9636A2F32223C4880032FCE4 /* L4STodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = L4STodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9636A2F62223C4880032FCE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9636A2F82223C4880032FCE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,12 +128,17 @@
 			children = (
 				9636A2F62223C4880032FCE4 /* AppDelegate.swift */,
 				9636A2F82223C4880032FCE4 /* ViewController.swift */,
+				9613C256223E5671006A4E00 /* DIN-RegularItalic.ttf */,
 				9636A2FA2223C4880032FCE4 /* Main.storyboard */,
 				9636A2FD2223C48B0032FCE4 /* Assets.xcassets */,
 				9636A2FF2223C48B0032FCE4 /* LaunchScreen.storyboard */,
+				9613C253223E4C52006A4E00 /* DB.otf */,
 				9636A3022223C48B0032FCE4 /* Info.plist */,
 				9636A3242223CBD30032FCE4 /* CardItem.swift */,
 				962C679622363C8A00CB5863 /* FlashCardViewController.swift */,
+				962C67982238E92300CB5863 /* CustomCell.swift */,
+				9613C251223D00C2006A4E00 /* SettingController.swift */,
+				9613C254223E524F006A4E00 /* TopViewController.swift */,
 			);
 			path = L4STodo;
 			sourceTree = "<group>";
@@ -399,10 +412,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9613C252223D00C2006A4E00 /* SettingController.swift in Sources */,
 				9636A2F92223C4880032FCE4 /* ViewController.swift in Sources */,
 				9636A3252223CBD30032FCE4 /* CardItem.swift in Sources */,
+				962C67992238E92300CB5863 /* CustomCell.swift in Sources */,
 				9636A2F72223C4880032FCE4 /* AppDelegate.swift in Sources */,
 				962C679722363C8A00CB5863 /* FlashCardViewController.swift in Sources */,
+				9613C255223E524F006A4E00 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

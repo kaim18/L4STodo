@@ -22,8 +22,17 @@ class FlashCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cardItems = CardItem.loadAll()
-        cardContent.text = cardItems[cardIndex].frontContent
+        if cardItems == []{
+            self.navigationController?.popViewController(animated: true)
+            let alert = UIAlertController(title: "エラー", message: "カードを追加してください", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            cardContent.text = cardItems[cardIndex].frontContent
+        }
         print(cardItems)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
