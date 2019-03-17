@@ -61,9 +61,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             self.textField.text = ""
             self.backTextField.text = ""
+            self.itemArray = CardItem.loadAll()
+            self.tableView.reloadData()
         }))
         self.present(alert, animated: true, completion: nil)
-        self.tableView.reloadData()
+        
     }
 
 }

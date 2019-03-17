@@ -135,7 +135,7 @@
                                 <color key="backgroundColor" red="1" green="0.74643353135714285" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Study Cards  ">
+                                        <fragment content="Flash Cards  ">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <font key="NSFont" size="40" name="DIN-Bold"/>
